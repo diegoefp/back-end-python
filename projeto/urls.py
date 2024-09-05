@@ -16,7 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+
+
+def my_view(request):
+    return HttpResponse("Um teste string de resposta HTTP")
+
+def user_view(request, username):
+    return HttpResponse(f"Perfil do usuário: {username}")
+
+def root_view(request):
+    return HttpResponse("Estamos na raiz. porta 8000")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', root_view),
+    path('sobre/', my_view),
+    path('user/<str:username>/', user_view),
+    
 ]
