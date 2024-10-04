@@ -27,3 +27,6 @@ def produtos(request):
 
 def contato(request):
     return render(request, 'contato.html')
+
+def professor(request):
+    return render(request, 'professor.html')
