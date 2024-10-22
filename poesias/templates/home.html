@@ -6,9 +6,13 @@
     <title>Minha Página</title>
 </head>
 <body>
+    {% include 'base_templates/header.html' %}
+
     <h1>Bem-vindo a minha página Django!</h1>
     <p>Esta é uma página simples servida através do Django</p>
     <p>Pagina home salva em templates no arquivo home.html</p>
     
+    {% include 'base_templates/footer.html' %}
+
 </body>
 </html>
