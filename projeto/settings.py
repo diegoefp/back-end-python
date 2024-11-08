@@ -9,10 +9,8 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
-from pathlib import Path
 import os
-
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,11 +116,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
+# URL que lida com os arquivos estáticos, servidos do STATIC_ROOT
+STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
+# Diretórios onde procurar arquivos estáticos adicionais
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+# Diretório onde os arquivos estáticos serão coletados
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+#STATIC_ROOT: Define o caminho absoluto para o diretório onde os arquivos estáticos serão coletados quando você executar collectstatic. 
+#Isso é especialmente útil para servir arquivos estáticos em produção.
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# URL que lida com os arquivos de mídia, servidos do MEDIA_ROOT
+MEDIA_URL = '/media/'
+
+# Caminho absoluto para o diretório de onde serviremos os arquivos de mídia
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
