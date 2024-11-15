@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
+    <title>Minha pagina Home</title>
 </head>
+
 <body>
     {% include 'base_templates/header.html' %}
 
-    <h1>Bem-vindo a minha página Django!</h1>
-    <p>Esta é uma página simples servida através do Django</p>
-    <p>Pagina home salva em templates no arquivo home.html</p>
+    
+    <h2>Autores</h2>
+    <ul>
+        {% for author in authors %}
+            <li><a href="{% url 'author_id' author.id %}">{{ author.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Categorias</h2>
+    <ul>
+        {% for category in categories %}
+            <li><a href="{% url 'category_id' category.id %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
     
     {% include 'base_templates/footer.html' %}
-
 </body>
+
 </html>

@@ -33,6 +33,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    margin-bottom: 15px;
 }
 
 nav ul li {
@@ -51,13 +52,54 @@ nav ul li a:hover {
 }
 
 
+/* Seção de Pesquisa */
+.search-section {
+    background: #fff;
+    padding: 15px;
+    max-width: 25%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.search-form input[type="search"] {
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-form button {
+    padding: 0.5rem;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #555;
+}
+
+
 /* Estilo para o rodapé */
 footer {
     background-color: #333;
     color: white;
     padding: 20px 0;
     text-align: center;
-    position: fixed;
     width: 100%;
     bottom: 0;
 }

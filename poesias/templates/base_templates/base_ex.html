@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <header> {% block header %} Cabeçalho Padrão {% endblock %} </header>
+    <header> {% block header %} {% include 'base_templates/header.html' %} {% endblock %} </header>
     <main> {% block content %}  {% endblock %} </main>
-    <footer> {% block footer %}  Rodapé Padrão  {% endblock %} </footer>
+    <footer> {% block footer %}  {% include 'base_templates/footer.html' %}  {% endblock %} </footer>
 
 </body>
 
